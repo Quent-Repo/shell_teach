@@ -1,0 +1,33 @@
+#!/bin/sh
+if [ "$X" -lt "0" ]
+then
+	echo "X is less than zero"
+fi
+if [ "$X" -gt "0" ]; then
+	echo "X is more than zero"
+fi
+[ "$X" -le "0" ] && \
+	echo "X is less than or equal to zero"
+[ "$X" -ge "0" ] && \
+	echo "X is more than or equal to zero"
+[ "$X" = "0" ] && \
+	echo "X is the string or number \"0\""
+[ "$X" = "hello" ] && \
+	echo "X matches the string \"hello\""
+[ "$X" != "hello" ] && \
+	echo "X is not the string \"hello\""
+[ -n "$X" ] && \
+	echo "X is of nonzero length"
+[ -f "$X" ] && \
+	echo "X is the path of a real fille" || \
+	echo "No such file: $X"
+[ -x "$X" ] && \
+	echo "X is the path of an executable file"
+[ "$X" -nt "/etc/passwd" ] && \
+	echo "X is a file which is newer then /etc/passwd"
+
+# A better version of the shit above
+#[ $X -ne 0 ] && echo "X isn't zero" || echo "X is zero"
+#[ -f $X ] && echo "X is a file" || echo "X is not a file"
+#[ -n $X ] && echo "X is of non-zero length" || \
+#	echo "cis of zero length"
